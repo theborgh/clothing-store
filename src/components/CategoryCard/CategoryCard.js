@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import './Card.scss';
+import './CategoryCard.scss';
 
-const card = (props) => {
+const categoryCard = (props) => {
    return (
       <div
          className={`${props.size} Card`}
@@ -20,4 +20,4 @@ const card = (props) => {
    )
 }
 
-export default withRouter(card);
+export default withRouter(categoryCard);

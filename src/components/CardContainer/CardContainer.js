@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './CardContainer.scss'
-import Card from '../Card/Card'
+import Card from '../CategoryCard/CategoryCard'
 
 class CardContainer extends Component {
    constructor() {
