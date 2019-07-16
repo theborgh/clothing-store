@@ -32,7 +32,6 @@ const config = {
      }
    }
 
-   console.log(snapshot);
    return userRef;
  }
 
