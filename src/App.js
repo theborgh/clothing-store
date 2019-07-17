@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-import './App.css';
-import HomePage from './pages/HomePage/HomePage';
-import ShopPage from './pages/ShopPage/ShopPage';
-import SignInUpPage from './pages/SignInUpPage/SignInUpPage';
-import Header from './components/Header/Header';
-import { Switch, Route } from 'react-router-dom';
-import { 
-  auth,
-  createUserProfileDocument,
-} from './firebase/firebase.utils';
+import React, { Component } from "react";
+import "./App.css";
+import HomePage from "./pages/HomePage/HomePage";
+import ShopPage from "./pages/ShopPage/ShopPage";
+import SignInUpPage from "./pages/SignInUpPage/SignInUpPage";
+import Header from "./components/Header/Header";
+import { Switch, Route } from "react-router-dom";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +13,7 @@ class App extends Component {
 
     this.state = {
       currentUser: null
-    }
+    };
   }
 
   unsubscribeFromAuth = null;
@@ -34,9 +31,9 @@ class App extends Component {
       } else {
         this.setState({
           currentUser: userAuth
-        })
+        });
       }
-    })
+    });
   }
 
   componentWillUnmount() {
@@ -48,9 +45,9 @@ class App extends Component {
       <div>
         <Header currentUser={this.state.currentUser} />
         <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route exact path='/shop' component={ShopPage} />
-          <Route exact path='/signin' component={SignInUpPage} />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/shop" component={ShopPage} />
+          <Route exact path="/signin" component={SignInUpPage} />
         </Switch>
       </div>
     );
