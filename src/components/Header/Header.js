@@ -3,6 +3,11 @@ import './Header.scss';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { auth } from '../../firebase/firebase.utils';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => ({
+   currentUser: state.user.currentUser
+});
 
 const header = ({ currentUser }) => (
    <div className="Header">
@@ -27,4 +32,4 @@ const header = ({ currentUser }) => (
    </div>
 )
 
-export default header;
+export default connect(mapStateToProps)(header);
