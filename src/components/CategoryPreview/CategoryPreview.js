@@ -1,6 +1,6 @@
 import React from 'react';
-import './CategoryPreview.scss';
 import ShopItem from '../ShopItem/ShopItem';
+import './CategoryPreview.scss';
 
 const categoryPreview = ({ title, items }) => {
    const PREVIEW_ITEMS_COUNT = 4;
@@ -12,8 +12,8 @@ const categoryPreview = ({ title, items }) => {
             {
                items
                   .filter((item, i) => i < PREVIEW_ITEMS_COUNT)
-                  .map(({id, ...otherProps}) => (
-                     <ShopItem key={id} {...otherProps} />
+                  .map((item) => (
+                     <ShopItem key={item.id} item={item} />
                   ))
             }
          </div>
