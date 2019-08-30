@@ -1,3 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`retains the same snapshot of the CategoryPreview component 1`] = `ShallowWrapper {}`;
+exports[`CategoryPreview Matches previous snapshot 1`] = `
+"<div className=\\"CategoryPreview\\">
+  <h1 className=\\"title\\">
+    HEH
+  </h1>
+  <div className=\\"itemPreview\\">
+    <Connect(shopItem) item={{...}} />
+  </div>
+</div>"
+`;

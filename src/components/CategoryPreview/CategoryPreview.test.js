@@ -1,9 +1,9 @@
-import { configure, shallow } from 'enzyme';
+import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 import CategoryPreview from './CategoryPreview';
 
-configure({ adapter: new Adapter() });
+Enzyme.configure({ adapter: new Adapter() });
 
 const mockItems = [
   {
@@ -11,7 +11,11 @@ const mockItems = [
   }
 ];
 
-it("retains the same snapshot of the CategoryPreview component", () => {
-  expect(shallow(<CategoryPreview title="Heh" items={mockItems} />).length).toBe(1);
-  expect(shallow(<CategoryPreview title="Heh" items={mockItems} />)).toMatchSnapshot();
+describe("CategoryPreview", () => {
+  it("Renders 1 component", () => {
+    expect(Enzyme.shallow(<CategoryPreview title="Heh" items={mockItems} />).length).toEqual(1);
+  });
+  it("Matches previous snapshot", () => {
+    expect(Enzyme.shallow(<CategoryPreview title="Heh" items={mockItems} />).debug()).toMatchSnapshot();
+  });
 });
