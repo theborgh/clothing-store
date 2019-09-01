@@ -3,7 +3,7 @@ import './FormInput.scss'
 
 const formInput = ({ handleChange, label, ...otherProps }) => (
 
-   <div className="group" >
+   <div className="group" data-test="component-FormInput" >
       <input className="formInput" onChange={handleChange} {...otherProps} />
       {
          label ? 
